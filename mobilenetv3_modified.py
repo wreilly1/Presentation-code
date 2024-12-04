@@ -176,7 +176,7 @@ def mobilenetv3_small(**kwargs):
 
 
 # Data loader function
-def load_validation_data(root, batch_size=1024):
+def load_validation_data(root, batch_size=32):
     transform = transforms.Compose([
         transforms.Resize((224, 224)),
         transforms.ToTensor(),
@@ -316,7 +316,7 @@ if __name__ == "__main__":
     net_small.load_state_dict(torch.load('pretrained/mobilenetv3-small-55df8e1f.pth'))
 
     net_small = net_small.to(device)
-    val_loader = load_validation_data(val_root, batch_size=1024)
+    val_loader = load_validation_data(val_root, batch_size=32)
 
     print("\nEvaluating MobileNetV3-Small with Efficient TTA:")
     batch_indices, top1_acc, topk_acc, overall_top1_acc, overall_topk_acc, confident_acc = evaluate_with_efficient_tta(
