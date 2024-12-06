@@ -1,4 +1,5 @@
 Jack Racer and William Reilly
+theAxe317 and wreilly1
 
 Original Github: https://github.com/d-li14/mobilenetv3.pytorch
 
